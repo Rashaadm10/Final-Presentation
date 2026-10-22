@@ -12,9 +12,11 @@ async function main() {
 main();
 
 function showUserPosts(id) {
-  window.location.href = `http://127.0.0.1:5500/user-posts-starter/index.html`
+  localStorage.setItem("id", id);
+  window.location.href = "./user.html";
   console.log(id);
 }
+
 
 function userHTML(user) {
   return `<div class="user-card" onclick="showUserPosts(${user.id})">
@@ -24,5 +26,4 @@ function userHTML(user) {
               <p><b>Phone:</b> ${user.phone}</p>
               <p><b>Website:</b> <a href="https://${user.website}" target="_blank">${user.website}</a></p>
           </div>
-        </div>`
-}
+        </div>`}
